@@ -58,9 +58,8 @@ async function saveTodo(ctx) {
 
 async function deleteTodo(ctx) {
   try {
-    const nonValid = ctx.params.id;
-    const validateId = nonValid.split(",");
-    const del = await delTodo({ ids: validateId });
+    const { ids } = ctx.req.body;
+    const del = await delTodo({ ids: ids });
     if (del === false) {
       return (ctx.body = {
         success: false,
@@ -87,12 +86,9 @@ async function deleteTodo(ctx) {
 
 async function updateTodos(ctx) {
   try {
-    const nonValid = ctx.params.id;
-    const postData = ctx.req.body;
-    const validateId = nonValid.split(",");
+    const { data, ids } = ctx.req.body;
 
-    const dataUpdated = await updateTodo({ data: postData, ids: validateId });
-    console.log(dataUpdated);
+    const dataUpdated = await updateTodo({ data: data, ids: ids });
     ctx.status = 200;
     return (ctx.body = {
       success: true,

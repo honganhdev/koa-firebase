@@ -19,8 +19,8 @@
     "koa": "^2.13.4",
     "koa-body": "^4.2.0",
     "koa-router": "^10.1.1",
-    "yup": "^0.32.11",
-    "@koa/cors": "^3.1.0"
+    "koa2-cors": "^2.0.6",
+    "yup": "^0.32.11"
   },
   "devDependencies": {
     "eslint": "^7.6.0",

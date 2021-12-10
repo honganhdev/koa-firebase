@@ -10,7 +10,7 @@ router.get("/helloWorld", helloWorldController.hello);
 
 router.get("/todos", todoController.getTodos);
 router.post("/todos", todoController.saveTodo);
-router.patch("/todos/:id", todoController.updateTodos);
-router.delete("/todos/:id", todoController.deleteTodo);
+router.patch("/todos", todoController.updateTodos);
+router.delete("/todos", todoController.deleteTodo);
 
 module.exports = router;
